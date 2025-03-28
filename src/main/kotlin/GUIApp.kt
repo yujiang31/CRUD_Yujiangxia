@@ -11,7 +11,7 @@ class GUIApp : Application() {
 
     override fun start(stage: Stage) {
         val operationSelector = ComboBox<String>()
-        operationSelector.items.addAll("Insertar", "Actualizar", "Eliminar", "Listar")
+        operationSelector.items.addAll("Insertar", "Actualizar", "Eliminar", "Listar", "Buscar Productos")
         operationSelector.value = "Insertar"
 
         // Campos reutilizables
