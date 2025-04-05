@@ -33,25 +33,5 @@ fun deleteCategory(id: Int) {
     }
 }
 
-fun listCategories(offset: Int = 0): String {
-    val sql = "SELECT category, categoryname FROM categories ORDER BY category ASC LIMIT 10 OFFSET $offset"
-    val builder = StringBuilder("🏷️ Categorías:\n")
-    try {
-        Database.getConnection()?.use { conn ->
-            conn.createStatement().use { stmt ->
-                val rs = stmt.executeQuery(sql)
-                var found = false
-                while (rs.next()) {
-                    found = true
-                    builder.append("${rs.getInt("categoryid")} - ${rs.getString("categoryname")}\n")
-                }
-                if (!found) {
-                    builder.append("No hay más categorías.\n")
-                }
-            }
-        }
-    } catch (e: Exception) {
-        return "❌ Error al listar categorías: ${e.message}"
-    }
-    return builder.toString()
-}
+
+

@@ -45,7 +45,7 @@ fun listInventory(offset: Int = 0): String {
                 var found = false
                 while (rs.next()) {
                     found = true
-                    builder.append("Producto ${rs.getInt("productid")} - Stock: ${rs.getInt("stock")} - Ventas: ${rs.getInt("sales")}\n")
+                    builder.append("Producto ${rs.getInt("prod_id")} - Stock: ${rs.getInt("quan_in_stock")} - Ventas: ${rs.getInt("sales")}\n")
                 }
                 if (!found) {
                     builder.append("No hay más productos")
