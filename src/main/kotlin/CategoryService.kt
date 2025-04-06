@@ -3,7 +3,7 @@ fun insertCategory(id: Int, name: String) {
     Database.getConnection()?.use { conn ->
         conn.prepareStatement(sql).use {
             it.setInt(1, id)
-            it.setString(2, name)
+            it.setBytes(2, name.toByteArray(Charsets.UTF_8))
             it.executeUpdate()
             println("✅ Categoría insertada.")
         }
@@ -14,7 +14,7 @@ fun updateCategory(id: Int, newName: String) {
     val sql = "UPDATE categories SET categoryname = ? WHERE category = ?"
     Database.getConnection()?.use { conn ->
         conn.prepareStatement(sql).use {
-            it.setString(1, newName)
+            it.setBytes(1, newName.toByteArray(Charsets.UTF_8))
             it.setInt(2, id)
             it.executeUpdate()
             println("✅ Categoría actualizada.")

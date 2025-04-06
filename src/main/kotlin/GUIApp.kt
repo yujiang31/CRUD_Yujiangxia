@@ -57,7 +57,7 @@ class GUIApp : Application() {
                 "Categories" -> when (operation) {
                     "Insertar" -> container.children.addAll(Category, CategoryName, executeButton, output)
                     "Actualizar" -> container.children.addAll(Category, CategoryName, executeButton, output)
-                    "Eliminar" -> container.children.addAll(Category, CategoryName, executeButton, output)
+                    "Eliminar" -> container.children.addAll(Category, executeButton, output)
                     "Listar" -> container.children.addAll(executeButton, output)
                 }
             }
