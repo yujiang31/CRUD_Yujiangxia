@@ -24,6 +24,8 @@ class GUIApp : Application() {
         operationSelector.items.addAll("Insertar", "Actualizar", "Eliminar", "Listar")
         operationSelector.value = "Selecciona una Operación"
 
+
+
         // Campos Reutilizables Tabla "Inventory"
         val Prod_id = TextField().apply { promptText = "ID Producto" }
         val Stock = TextField().apply { promptText = "Cantidad Stock" }
@@ -33,11 +35,14 @@ class GUIApp : Application() {
         val Category = TextField().apply { promptText = "Número Categoría" }
         val CategoryName = TextField().apply { promptText = "Nombre Categoría" }
 
+
+
         val output = Label()
         val executeButton = Button("Ejecutar operación")
 
         val container = VBox(10.0)
         container.padding = Insets(20.0)
+
 
         // Menu principal dependiendo de que selección habra cambiado las opciones
         fun updateForm(selectedTable: String, operation: String) {
